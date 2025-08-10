@@ -15,6 +15,7 @@ import BookDetails from "../BookDetails/BookDetails";
 import UpdateBook from "../UpdateBook/UpdateBook";
 import Error from '../../Components/Error/Error'
 import ShelfBookDetails from "../BookDetails/ShelfBookDetails";
+import Faq from "../Faq/Faq";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         {
             path:'/bookShelf',
             Component: BookShelf
+        },
+        {
+          path:'/faq',
+          Component: Faq
         },
         {
        path:'/bookShelf/:id',

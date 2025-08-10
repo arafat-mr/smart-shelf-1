@@ -32,12 +32,13 @@ const PopularBooks = () => {
   return (
     <div
       // data-aos="fade-up"
-      className="bg-[url('https://i.ibb.co/qLydTBzd/peter-rovder-X-5k-MOSx-Lzw-unsplash.jpg')] p-2 lg:p-5"
+      // bg-[url('https://i.ibb.co/qLydTBzd/peter-rovder-X-5k-MOSx-Lzw-unsplash.jpg')]
+      className=" p-2 lg:p-5"
     >
-      <h3 className="text-center text-lg md:text-2xl lg:text-4xl text-white font-semibold mt-3">
+      <h3 className="text-center text-lg md:text-2xl lg:text-4xl bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent font-semibold mt-3">
         Popular Books
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-11/12 gap-5 mt-5 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-11/12 gap-5 mt-5 mx-auto ">
         {data.map((single) => (
           <SingleBook key={single._id} single={single} />
         ))}

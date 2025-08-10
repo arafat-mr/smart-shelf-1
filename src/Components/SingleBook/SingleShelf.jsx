@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const SingleShelf = ({single}) => {
     return (
-          <div className="card bg-base-200  lg:w-96 shadow-sm">
+          <div className="card bg-base-200  lg:w-96 shadow-2xl ">
      <figure>
        <img className=' w-full h-48 object-cover object-center'
          src={single.cover_photo}

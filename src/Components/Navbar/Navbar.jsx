@@ -3,8 +3,9 @@ import { Link, NavLink } from "react-router";
 import "./Navbar.css";
 import { AuthContext } from "../../Context/AuthProvider";
 import Swal from "sweetalert2";
+import LoadingSpinner from "../Loading/Loading";
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut,loading } = useContext(AuthContext);
   const handleSIgnOut = () => {
     logOut().then(res=>{
        Swal.fire({
@@ -35,15 +36,24 @@ const Navbar = () => {
     >
       Bookshelf
     </NavLink>
-
     <NavLink
+      to="/faq"
+      className="transition-colors duration-300 hover:text-pink-500"
+    >
+      FAQ
+    </NavLink>
+
+    
+     {
+
+      user && <>
+      <NavLink
       to="/addBook"
       className="transition-colors duration-300 hover:text-pink-500"
     >
       Add Book
     </NavLink>
-
-    <NavLink
+      <NavLink
       to="/myBooks"
       className="transition-colors duration-300 hover:text-pink-500"
     >
@@ -56,8 +66,14 @@ const Navbar = () => {
     >
       Profile
     </NavLink>
+    </>
+     }
+    
   </>
 );
+if (loading) {
+    return <LoadingSpinner/>
+  }
 
   return (
     <div className="navbar bg-white/10 backdrop-blur-xl shadow-sm px-5" >
@@ -66,7 +82,7 @@ const Navbar = () => {
           <div
             tabIndex={0}
             role="button"
-            className="btn btn-ghost lg:hidden -ml-5"
+            className="btn btn-ghost lg:hidden -ml-7"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

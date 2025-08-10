@@ -179,8 +179,9 @@ const ShelfBookDetails = () => {
 
   return (
     <div>
-      <h3 className="mt-25 text-3xl font-semibold md:text-4xl text-center">Book details</h3>
-      <div className="hero min-h-screen md:-mt-48 lg:-mt-10">
+<h3 className="mt-24 text-3xl font-semibold md:text-4xl text-center text-gray-900">
+  Book details
+</h3>      <div className="hero min-h-screen mt-36 md:-mt-48 lg:-mt-10">
         <div className="hero-content flex-col md:flex-row -mt-52 lg:-mt-20 overflow-hidden">
           <img
             src={book.cover_photo}

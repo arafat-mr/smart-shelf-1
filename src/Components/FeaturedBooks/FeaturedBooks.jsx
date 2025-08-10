@@ -82,7 +82,7 @@ const FeaturedBooks = () => {
 
     return (
         <motion.div 
-            className="text-center bg-gradient-to-b from-indigo-50 to-purple-50 py-12 px-4"
+            className="text-center  py-12 px-4"
             initial="hidden"
             animate="visible"
             variants={container}
@@ -101,7 +101,7 @@ const FeaturedBooks = () => {
             </motion.p>
 
             {loading ? (
-                <div className="flex justify-center">
+                <div className="flex justify-center ">
                     <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
                 </div>
             ) : (
@@ -127,11 +127,11 @@ const FeaturedBooks = () => {
                                
                             >
                                 <motion.div
-                                    className="relative w-64 h-64 rounded-2xl overflow-hidden shadow-lg"
+                                    className="relative w-64 h-64 rounded-2xl overflow-hidden shadow-2xl"
                                     variants={hoverEffect}
                                     // animate={{ rotate: 360 }}
                                 >
-                                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 z-10"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 z-10 "></div>
                                     <img 
                                         className="w-full h-full object-cover"
                                         src={categoryImages[category] || categoryImages.default}

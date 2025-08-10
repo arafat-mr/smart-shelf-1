@@ -10,7 +10,6 @@ import Aos from "aos";
 import 'aos/dist/aos.css';
 import { motion } from "framer-motion";
 import { TypeAnimation } from 'react-type-animation';
-
 const Slider = () => {
   useEffect(() => {
     Aos.init({ duration: 1500 });
@@ -48,9 +47,9 @@ const Slider = () => {
           reverseDirection: false,
           disableOnInteraction: true,
         }}
-        spaceBetween={10}
+        spaceBetween={15}
         slidesPerView={1}
-        className="relative z-10"
+        className="relative z-10  "
       >
         {/* Slide 1 */}
         <SwiperSlide>
@@ -60,22 +59,22 @@ const Slider = () => {
               initial="hidden"
               animate="visible"
               variants={textVariants}
-              className="flex flex-col justify-start items-start space-y-5 max-w-2xl"
+              className="flex flex-col justify-start items-start space-y-2 max-w-2xl "
             >
               <TypeAnimation
                 sequence={[
                   'Every book is a doorway',
-                  1000,
+                  500,
                   'Every book is a doorway to a new world...',
                   2000
                 ]}
                 wrapper="h2"
                 speed={30}
-                className="text-4xl md:text-5xl font-light leading-tight"
+                className="text-2xl md:text-5xl font-light leading-tight "
                 repeat={Infinity}
               />
               
-              <motion.p className="text-lg md:text-xl font-light opacity-90">
+              <motion.p className="text-md md:text-xl font-light opacity-90 ">
                 Wander through whispered secrets of ancient tomes, get lost in modern tales that spark the imagination, and discover stories that stay with you long after the final page.
               </motion.p>
               
@@ -112,7 +111,7 @@ const Slider = () => {
               initial="hidden"
               animate="visible"
               variants={textVariants}
-              className="flex flex-col justify-start items-start space-y-5 max-w-2xl"
+              className="flex flex-col justify-start items-start space-y-2 max-w-2xl"
             >
               <TypeAnimation
                 sequence={[
@@ -123,11 +122,11 @@ const Slider = () => {
                 ]}
                 wrapper="h2"
                 speed={30}
-                className="text-4xl md:text-5xl font-light leading-tight"
+                className="text-2xl md:text-5xl font-light leading-tight "
                 repeat={Infinity}
               />
               
-              <motion.p className="text-lg md:text-xl font-light opacity-90">
+              <motion.p className="text-md md:text-xl font-light opacity-90">
                 Arrange, tag, and style your collection exactly how you like—choose covers, colors, and categories to reflect your personal journey through every story.
               </motion.p>
               
@@ -164,7 +163,7 @@ const Slider = () => {
               initial="hidden"
               animate="visible"
               variants={textVariants}
-              className="flex flex-col justify-start items-start space-y-5 max-w-2xl"
+              className="flex flex-col justify-start items-start space-y-2 max-w-2xl"
             >
               <TypeAnimation
                 sequence={[
@@ -175,11 +174,11 @@ const Slider = () => {
                 ]}
                 wrapper="h2"
                 speed={30}
-                className="text-4xl md:text-5xl font-light leading-tight"
+                className="text-2xl md:text-5xl font-light leading-tight  "
                 repeat={Infinity}
               />
               
-              <motion.p className="text-lg md:text-xl font-light opacity-90">
+              <motion.p className="text-md md:text-xl font-light opacity-90">
                 Sit back as fragrant steam curls around whispered words, letting each sip and sentence carry you deeper into worlds both familiar and fantastical.
               </motion.p>
               
@@ -203,7 +202,7 @@ const Slider = () => {
                 src="https://i.ibb.co/rRv24k8V/aaron-burden-4e-Ww-Sxa-Dhe4-unsplash.jpg"
                 alt="Reading with coffee"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent mt-10"></div>
             </motion.div>
           </div>
         </SwiperSlide>

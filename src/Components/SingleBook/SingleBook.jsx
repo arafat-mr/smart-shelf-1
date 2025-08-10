@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const SingleBook = ({single}) => {
     
     return (
-       <div className="card bg-base-200 lg:w-96 shadow-sm">
+       <div className="card bg-base-200 lg:w-96 shadow-2xl ">
   <figure>
     <img className=' w-full h-48 object-cover object-center'
       src={single.cover_photo}
@@ -22,7 +22,7 @@ const SingleBook = ({single}) => {
       <div className="badge ">{single.book_category}</div>
       <div className="badge "> <FaHeart  color='red'/>{single.upvote}</div>
       {/* <Link to={`/books/${single._id}`} className="badge font-semibold">  Go to shelf</Link> */}
-      <Link to={'/bookShelf'} className="badge font-semibold">  Go to shelf</Link>
+      <Link to={`/bookShelf/${single._id}`} className="badge font-semibold">  See More</Link>
     </div>
   </div>
 </div>

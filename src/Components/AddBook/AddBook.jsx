@@ -37,10 +37,10 @@ const AddBook = () => {
      
   };
   return (
-    <div className="hero bg-base-200 min-h-screen w-full mt-15 md:-mt-15 lg:mt-15 bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 ">
+    <div className="hero  min-h-screen w-full mt-15 md:-mt-15 lg:mt-15 bg-transparent ">
       <div className="hero-content flex-col lg:flex-row-reverse   ">
         <div className="card  w-full  max-w-sm md:max-w-2xl shrink-0 shadow-2xl bg-trasnparent text-white ">
-          <h3 className="text-2xl text-center font-semibold p-5  ">
+          <h3 className="text-2xl text-center font-semibold p-5 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent ">
             Add Your Book Now
           </h3>
           <form
