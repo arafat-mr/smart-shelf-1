@@ -37,18 +37,18 @@ const AddBook = () => {
      
   };
   return (
-    <div className="hero bg-base-200 min-h-screen w-full mt-15 md:-mt-15 lg:mt-15 bg-gradient-to-r from-[#2E3192] to-[#1BFFFF] ">
-      <div className="hero-content flex-col lg:flex-row-reverse  ">
+    <div className="hero bg-base-200 min-h-screen w-full mt-15 md:-mt-15 lg:mt-15 bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 ">
+      <div className="hero-content flex-col lg:flex-row-reverse   ">
         <div className="card  w-full  max-w-sm md:max-w-2xl shrink-0 shadow-2xl bg-trasnparent text-white ">
-          <h3 className="text-2xl text-center font-semibold p-5">
+          <h3 className="text-2xl text-center font-semibold p-5  ">
             Add Your Book Now
           </h3>
           <form
             onSubmit={handleForm}
-            className="card-body grid grid-cols-1 md:grid-cols-3 items-center gap-5"
+            className="card-body grid grid-cols-1 md:grid-cols-3 items-center gap-5 "
           >
             {/* title  */}
-            <div className="w-full md:col-span-2">
+            <div className="w-full md:col-span-2 ">
               <label className="label text-black ">Title</label>
               <input
                 type="text"

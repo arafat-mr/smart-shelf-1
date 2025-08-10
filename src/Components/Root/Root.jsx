@@ -18,8 +18,7 @@ const Root = () => {
     return (
         <div >
           {/*  */}
-            <span className='fixed top-0 w-full  z-50 bg-gradient-to-r from-[#ffeeff] to-[#f3f3f3]
-        backdrop-blur-3xl shadow-md '>
+            <span className='fixed top-0 w-full  z-50 bg-gray-800/30 backdrop-blur-xl border-b border-gray-500/25 shadow-lg  '>
 
             <Navbar />
             </span>

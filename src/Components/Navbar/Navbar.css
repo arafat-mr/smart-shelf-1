@@ -1,5 +1,19 @@
-ul a.active {
-  border-bottom: 1px solid rgb(224, 82, 182); 
- 
-  transition: all 0.3s ease; 
+ul a {
+  position: relative;
+  padding-bottom: 4px; /* space for underline */
+}
+
+ul a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(224, 82, 182);
+  transition: width 0.3s ease;
+}
+
+ul a.active::after {
+  width: 100%;
 }

@@ -31,7 +31,7 @@ const PopularBooks = () => {
 
   return (
     <div
-      data-aos="fade-up"
+      // data-aos="fade-up"
       className="bg-[url('https://i.ibb.co/qLydTBzd/peter-rovder-X-5k-MOSx-Lzw-unsplash.jpg')] p-2 lg:p-5"
     >
       <h3 className="text-center text-lg md:text-2xl lg:text-4xl text-white font-semibold mt-3">

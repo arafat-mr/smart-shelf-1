@@ -21,20 +21,48 @@ const Navbar = () => {
     })
   };
   const links = (
-    <>
-      <NavLink to="/">Home</NavLink>
+  <>
+    <NavLink
+      to="/"
+      className="transition-colors duration-300 hover:text-pink-500"
+    >
+      Home
+    </NavLink>
 
-      <NavLink to="/bookShelf">Bookshelf</NavLink>
-      <NavLink to="/addBook">Add Book</NavLink>
+    <NavLink
+      to="/bookShelf"
+      className="transition-colors duration-300 hover:text-pink-500"
+    >
+      Bookshelf
+    </NavLink>
 
-      <NavLink to="/myBooks">My Books </NavLink>
-      <NavLink to="/profile">Profile </NavLink>
-    </>
-  );
+    <NavLink
+      to="/addBook"
+      className="transition-colors duration-300 hover:text-pink-500"
+    >
+      Add Book
+    </NavLink>
+
+    <NavLink
+      to="/myBooks"
+      className="transition-colors duration-300 hover:text-pink-500"
+    >
+      My Books
+    </NavLink>
+
+    <NavLink
+      to="/profile"
+      className="transition-colors duration-300 hover:text-pink-500"
+    >
+      Profile
+    </NavLink>
+  </>
+);
+
   return (
-    <div className="navbar bg-transparent shadow-sm">
+    <div className="navbar bg-white/10 backdrop-blur-xl shadow-sm px-5" >
       <div className="navbar-start">
-        <div className="dropdown ">
+        <div className="dropdown ">  
           <div
             tabIndex={0}
             role="button"
@@ -70,62 +98,41 @@ const Navbar = () => {
             src="https://i.ibb.co/ymbFQTnC/1-2eb8e33a-removebg-preview.png"
             alt=""
           />
-          <p className=" text-lg md:text-2xl bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent font-semibold">
-            Smart <span className="-ml-1">Shelf</span>{" "}
-          </p>
+          <p className="text-lg md:text-2xl bg-gradient-to-r from-white via-sky-100 to-gray-300 bg-clip-text text-transparent font-semibold hover:text-black transition-all duration-300">
+  Smart <span className="-ml-1">Shelf</span>
+</p>
+
+
         </div>
       </div>
       <div className="navbar-center hidden lg:flex ">
-        <ul className="menu menu-horizontal px-1 space-x-5 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent text-lg">
+        <ul className="menu menu-horizontal px-1 space-x-5 text-white text-lg">
           {links}
         </ul>
       </div>
       <div className="navbar-end space-x-1 lg:space-x-2">
-        {/* {user ? (
-          <button
-            onClick={handleSIgnOut}
-            className="btn btn-outline btn-secondary hidden lg:flex"
-          >
-            Signout
-          </button>
-        ) : (
-          <>
-            {" "}
-            <Link
-              to="/login"
-              className="btn btn-outline btn-secondary hidden lg:flex"
-            >
-              Login
-            </Link>
-            <Link
-              to="/signup"
-              className="btn btn-outline btn-secondary hidden lg:flex"
-            >
-              SignUp
-            </Link>
-          </>
-        )} */}
+        
         {user ? (<>
           <div className="bg-white rounded-full h-9 w-9 lg:h-10 lg:w-10 overflow-hidden"><img className="w-full h-full" src={user.photoURL} alt="" /></div>
           <button
             onClick={handleSIgnOut}
-            className="btn btn-outline btn-secondary btn-sm lg:btn-md  "
+            className="btn btn-outline btn-secondary btn-sm lg:btn-md  text-white border-blue-100 hover:bg-gray-300 hover:text-black "
           >
             Signout
           </button>
           </>
         ) : (
           <>
-          <div className="bg-white rounded-full h-9 w-9 lg:h-10 lg:w-10"><img src="https://i.ibb.co/fzJPDZJt/png-transparent-user-profile-computer-icons-login-user-avatars-thumbnail.png" alt="" /></div>
+          <div className="bg-white rounded-full h-9 w-9 lg:h-10 lg:w-10"><img src="https://i.ibb.co/qMCMB6Tq/360-F-229758328-7x8jw-Cwjt-BMm-C6rg-Fz-LFh-Zo-Ep-Lob-B6-L8.png" alt="" /></div>
             <Link
               to="/login"
-              className=" btn btn-sm btn-outline btn-secondary lg:btn-md  "
+              className=" btn btn-sm btn-outline btn-secondary lg:btn-md text-white border-blue-100 hover:bg-gray-300 hover:text-black"
             >
               Login
             </Link>
             <Link
               to="/signup"
-              className=" btn btn-sm  btn-outline btn-secondary lg:btn-md "
+              className=" btn btn-sm  btn-outline btn-secondary lg:btn-md text-white border-blue-100 hover:bg-gray-300 hover:text-black"
             >
               SignUp
             </Link>
