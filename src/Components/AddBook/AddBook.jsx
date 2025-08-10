@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
-import DatePicker from "react-date-picker";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -12,12 +11,9 @@ const AddBook = () => {
     const form = e.target;
     const formData = new FormData(form);
     const finalForm = Object.fromEntries(formData.entries());
-  
-
-    // send data
 
     axios
-      .post("https://virtual-bookshelf-server-ruddy.vercel.app/books",finalForm)
+      .post("https://virtual-bookshelf-server-ruddy.vercel.app/books", finalForm)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({
@@ -27,153 +23,156 @@ const AddBook = () => {
             showConfirmButton: true,
             timer: 1500,
           });
-           form.reset()
+          form.reset();
         }
       })
       .catch(() => {
-       
         alert("error");
       });
-     
   };
+
   return (
-    <div className="hero  min-h-screen w-full mt-15 md:-mt-15 lg:mt-15 bg-transparent ">
-      <div className="hero-content flex-col lg:flex-row-reverse   ">
-        <div className="card  w-full  max-w-sm md:max-w-2xl shrink-0 shadow-2xl bg-trasnparent text-white ">
-          <h3 className="text-2xl text-center font-semibold p-5 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent ">
+    <div className="hero min-h-screen w-full mt-15 md:-mt-15 lg:mt-15 bg-transparent">
+      <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="card w-full max-w-sm md:max-w-2xl shrink-0 shadow-2xl bg-transparent text-base-content border border-blue-200">
+          <h3 className="text-2xl text-center font-semibold p-5 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent">
             Add Your Book Now
           </h3>
           <form
             onSubmit={handleForm}
-            className="card-body grid grid-cols-1 md:grid-cols-3 items-center gap-5 "
+            className="card-body grid grid-cols-1 md:grid-cols-3 items-center gap-5"
           >
-            {/* title  */}
-            <div className="w-full md:col-span-2 ">
-              <label className="label text-black ">Title</label>
+            {/* Title */}
+            <div className="w-full md:col-span-2">
+              <label className="label text-base-content">Title</label>
               <input
                 type="text"
-                className="input bg-transparent text-black w-full border-violet-700"
+                className="input input-bordered w-full"
                 placeholder="Add your title"
                 name="book_title"
                 required
               />
             </div>
-            {/* category  */}
+
+            {/* Category */}
             <div className="w-full md:col-span-1">
-              <label className="label text-black ">Category</label>
-              <fieldset className="fieldset">
-                <select
-                  className="select bg-transparent text-black w-full border-violet-700"
-                  name="book_category"
-                  required
-                >
-                  <option disabled={true}>Pick a category</option>
-                  <option>Fiction</option>
-                  <option>Non-Fiction</option>
-                  <option>Fantasy</option>
-                </select>
-              </fieldset>
+              <label className="label text-base-content">Category</label>
+              <select
+                className="select select-bordered w-full"
+                name="book_category"
+                required
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Pick a category
+                </option>
+                <option>Fiction</option>
+                <option>Non-Fiction</option>
+                <option>Fantasy</option>
+              </select>
             </div>
 
-            {/* over view  */}
+            {/* Overview */}
             <div className="md:col-span-3">
-              <label className="label text-black ">Overview</label>
+              <label className="label text-base-content">Overview</label>
               <textarea
-                type="text"
                 placeholder="Enter Overview Here"
-                className="textarea bg-transparent text-black w-full border-violet-700 "
+                className="textarea textarea-bordered w-full"
                 name="book_overview"
                 required
               ></textarea>
             </div>
-            {/* reading status  */}
+
+            {/* Reading Status */}
             <div className="w-full md:col-span-1">
-              <label className="label text-black ">Reading Status</label>
-              <fieldset className="fieldset">
-                <select
-                  className="select bg-transparent text-black w-full border-violet-700"
-                  name="reading_status"
-                  required
-                >
-                  <option disabled={true}>Pick a status</option>
-                  <option>Read</option>
-                  <option>Reading </option>
-                  <option>Want-to-read</option>
-                </select>
-              </fieldset>
+              <label className="label text-base-content">Reading Status</label>
+              <select
+                className="select select-bordered w-full"
+                name="reading_status"
+                required
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Pick a status
+                </option>
+                <option>Read</option>
+                <option>Reading</option>
+                <option>Want-to-read</option>
+              </select>
             </div>
-            {/* total page  */}
+
+            {/* Total Page */}
             <div className="md:col-span-1">
-              <label className="label text-black">Total Page</label>
+              <label className="label text-base-content">Total Page</label>
               <input
                 type="number"
-                className="input bg-transparent text-black w-full border-violet-700"
+                className="input input-bordered w-full"
                 placeholder="Page Total"
                 name="total_page"
                 required
               />
             </div>
-            {/* upvote  */}
+
+            {/* Upvote */}
             <div className="md:col-span-1">
-              <label className="label text-black">Total Upvote</label>
+              <label className="label text-base-content">Total Upvote</label>
               <input
                 type="number"
-                className="input bg-transparent text-black w-full border-violet-700"
-                placeholder='Upvote'
+                className="input input-bordered w-full"
+                placeholder="Upvote"
                 name="upvote"
                 required
                 defaultValue={upvote}
                 readOnly
               />
             </div>
-            {/* book_author  */}
+
+            {/* Author Name */}
             <div className="md:col-span-1">
-              <label className="label text-black">Author Name</label>
+              <label className="label text-base-content">Author Name</label>
               <input
                 type="text"
-                className="input bg-transparent text-black w-full border-violet-700"
+                className="input input-bordered w-full"
                 placeholder="Enter Author Name"
-                // defaultValue={user && user}
-                // readOnly
                 name="book_author"
                 required
               />
             </div>
-            {/* coverphoto */}
+
+            {/* Cover Photo */}
             <div className="md:col-span-2">
-              <label className="label text-black">Cover Photo</label>
+              <label className="label text-base-content">Cover Photo</label>
               <input
                 type="url"
-                className="input bg-transparent text-black w-full border-violet-700"
+                className="input input-bordered w-full"
                 placeholder="Enter your books cover photo url"
-                // defaultValue={user && user.displayName}
-                // readOnly
                 name="cover_photo"
                 required
               />
             </div>
 
-            {/* email  */}
+            {/* User Email */}
             <div className="md:col-span-2">
-              <label className="label text-black">User Email</label>
+              <label className="label text-base-content">User Email</label>
               <input
                 type="email"
-                className="input bg-transparent text-black w-full border-violet-700"
+                className="input input-bordered w-full"
                 placeholder="Email"
-                defaultValue={user && user.email}
+                defaultValue={user?.email}
                 readOnly
                 name="user_email"
                 required
               />
             </div>
-            {/* user name  */}
+
+            {/* User Name */}
             <div className="md:col-span-1">
-              <label className="label text-black">User Name</label>
+              <label className="label text-base-content">User Name</label>
               <input
                 type="text"
-                className="input bg-transparent text-black w-full border-violet-700"
+                className="input input-bordered w-full"
                 placeholder="Username"
-                defaultValue={user && user.displayName}
+                defaultValue={user?.displayName}
                 readOnly
                 name="user_name"
                 required
@@ -183,7 +182,7 @@ const AddBook = () => {
             <div className="md:col-span-3">
               <button
                 type="submit"
-                className="btn btn-outline btn-secondary mt-4 w-full text-pink-700 border-blue-200 hover:bg-gray-300 "
+                className="btn btn-outline btn-secondary mt-4 w-full"
               >
                 Add Book
               </button>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import "./Navbar.css";
 import { AuthContext } from "../../Context/AuthProvider";
@@ -71,6 +71,20 @@ const Navbar = () => {
     
   </>
 );
+const [theme, setTheme] = useState(
+  localStorage.getItem("theme") === "light" ? "light" : "dark"
+);
+useEffect(() => {
+  const savedTheme = localStorage.getItem("theme");
+  setTheme(savedTheme);
+  document.querySelector("html").setAttribute("data-theme", savedTheme);
+}, [theme]);
+
+const handleThemeChange = (event) => {
+  const newTheme = event.target.checked ? "dark" : "light";
+  setTheme(newTheme);
+  localStorage.setItem("theme", newTheme);
+};
 if (loading) {
     return <LoadingSpinner/>
   }
@@ -127,6 +141,13 @@ if (loading) {
         </ul>
       </div>
       <div className="navbar-end space-x-1 lg:space-x-2">
+        <input
+  type="checkbox"
+  value="dark"
+  className="toggle theme-controller mr-6"
+  checked={theme === "dark"}
+  onChange={handleThemeChange}
+/>;
         
         {user ? (<>
           <div className="bg-white rounded-full h-9 w-9 lg:h-10 lg:w-10 overflow-hidden"><img className="w-full h-full" src={user.photoURL} alt="" /></div>
