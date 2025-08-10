@@ -183,7 +183,7 @@ const AddBook = () => {
             <div className="md:col-span-3">
               <button
                 type="submit"
-                className="btn btn-outline btn-secondary mt-4 w-full"
+                className="btn btn-outline btn-secondary mt-4 w-full text-black border-blue-200 hover:bg-gray-300 hover:text-black"
               >
                 Add Book
               </button>

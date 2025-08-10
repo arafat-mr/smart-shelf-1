@@ -242,7 +242,7 @@ const ShelfBookDetails = () => {
             onChange={(e) => setReviewText(e.target.value)}
             required
           />
-          <button className="btn btn-primary mt-4" type="submit">
+          <button className=" mt-2 btn btn-lg bg-emerald-500 hover:bg-emerald-600 border-none text-white shadow-lg group" type="submit">
             Submit Review
           </button>
         </form>

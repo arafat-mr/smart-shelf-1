@@ -53,19 +53,19 @@ const MySingleBooks = ({ single, data, setData }) => {
 
               <Link
                 to={`updateBooks/${single._id}`}
-                className="btn btn-outline btn-sm btn-secondary font-semibold"
+                className="btn btn-outline btn-sm btn-secondary font-semibold border-blue-200 hover:bg-gray-300 text-black"
               >
                 {" "}
                 Update
               </Link>
               <button
                 onClick={() => handleDelete(single._id)}
-                className="btn btn-outline btn-sm btn-secondary font-semibold"
+                className="btn btn-outline btn-sm btn-secondary font-semibold border-blue-200 hover:bg-gray-300 text-black"
               >
                 {" "}
                 Delete
               </button>
-                <Link to={`/books/${single._id}`} className="btn btn-outline btn-sm btn-secondary font-semibold">View Details</Link>
+                <Link to={`/books/${single._id}`} className="btn btn-outline btn-sm btn-secondary font-semibold border-blue-200 hover:bg-gray-300 text-black">View Details</Link>
               <div className=" flex items-center justify-center gap-2 ">
                 {" "}
                 <button disabled>
