@@ -30,7 +30,7 @@ const AddBook = () => {
            form.reset()
         }
       })
-      .catch((err) => {
+      .catch(() => {
        
         alert("error");
       });
@@ -183,7 +183,7 @@ const AddBook = () => {
             <div className="md:col-span-3">
               <button
                 type="submit"
-                className="btn btn-outline btn-secondary mt-4 w-full text-black border-blue-200 hover:bg-gray-300 hover:text-black"
+                className="btn btn-outline btn-secondary mt-4 w-full text-pink-700 border-blue-200 hover:bg-gray-300 "
               >
                 Add Book
               </button>

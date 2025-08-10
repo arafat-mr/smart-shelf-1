@@ -7,7 +7,7 @@ import LoadingSpinner from "../Loading/Loading";
 const Navbar = () => {
   const { user, logOut,loading } = useContext(AuthContext);
   const handleSIgnOut = () => {
-    logOut().then(res=>{
+    logOut().then(()=>{
        Swal.fire({
                 title: " Successfully logged Out",
                 icon: "success",
@@ -132,7 +132,7 @@ if (loading) {
           <div className="bg-white rounded-full h-9 w-9 lg:h-10 lg:w-10 overflow-hidden"><img className="w-full h-full" src={user.photoURL} alt="" /></div>
           <button
             onClick={handleSIgnOut}
-            className="btn btn-outline btn-secondary btn-sm lg:btn-md  text-white border-blue-100 hover:bg-gray-300 hover:text-black "
+            className="btn btn-outline btn-secondary btn-sm lg:btn-md   border-blue-100 hover:bg-gray-300 text-pink-700 "
           >
             Signout
           </button>
@@ -142,13 +142,13 @@ if (loading) {
           <div className="bg-white rounded-full h-9 w-9 lg:h-10 lg:w-10"><img src="https://i.ibb.co/qMCMB6Tq/360-F-229758328-7x8jw-Cwjt-BMm-C6rg-Fz-LFh-Zo-Ep-Lob-B6-L8.png" alt="" /></div>
             <Link
               to="/login"
-              className=" btn btn-sm btn-outline btn-secondary lg:btn-md text-white border-blue-100 hover:bg-gray-300 hover:text-black"
+              className=" btn btn-sm btn-outline btn-secondary lg:btn-md  border-blue-100 hover:bg-gray-300 text-pink-700 "
             >
               Login
             </Link>
             <Link
               to="/signup"
-              className=" btn btn-sm  btn-outline btn-secondary lg:btn-md text-white border-blue-100 hover:bg-gray-300 hover:text-black"
+              className=" btn btn-sm  btn-outline btn-secondary lg:btn-md text-pink-700  border-blue-100 hover:bg-gray-300 "
             >
               SignUp
             </Link>

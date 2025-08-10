@@ -15,10 +15,10 @@ const Error = () => {
             </Helmet> */}
 <div className=' rounded mt-20 w-full p-2  h-[350px] lg:h-full lg:mt-0 flex flex-col justify-center items-center gap-4 lg:'>
        <h3 className='text-lg md:text-3xl mb-4 mulish font-semibold text-center animate-bounce'>Opps Page Not Found!</h3>
-       <div>
-        <img className='md:w-6/12 rounded-md mx-auto ' src="https://i.ibb.co/gMW5wMfj/HTML-Yeti-404-Page.gif" alt="" />
+       <div className=''>
+        <img className='md:w-7/12 rounded-lg mx-auto  ' src="https://i.ibb.co/gMW5wMfj/HTML-Yeti-404-Page.gif" alt="" />
        </div>
-      <Link to='/'  className='btn btn-primary bg-pink-500'>Back To Home</Link>
+      <Link to='/'  className='btn btn-lg bg-emerald-500 hover:bg-emerald-600 border-none text-white shadow-lg'>Back To Home</Link>
     </div>
     </div>
    

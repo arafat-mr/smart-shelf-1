@@ -87,11 +87,11 @@ const handleGoogleLogIn=()=>{
                   Forgot password?
                 </a>
               </div>
-              <button type="submit" className="btn btn-secondary btn-outline mt-4">
+              <button type="submit" className="btn btn-secondary btn-outline mt-4 text-pink-700 border-pink-400 hover:bg-gray-300">
                 Login
               </button>
                <div className="divider text-pink-500">OR</div>
-              <button onClick={handleGoogleLogIn} type="button" className="btn btn-outline btn-secondary bg-transparent text-lg bg-gradient-to-r from-pink-800  to-pink-600 bg-clip-text text-transparent">
+              <button onClick={handleGoogleLogIn} type="button" className="btn btn-outline btn-secondary bg-transparent text-lg text-pink-700 border-pink-400 hover:bg-gray-300">
                             <FaGoogle className="text-pink-600"/>
                               Continue  with Google
                             </button>
