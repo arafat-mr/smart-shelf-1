@@ -26,7 +26,7 @@ const Review = ({ single, handleReviewUpdate, handleReviewDelete }) => {
         
       }
     } catch (err) {
-      console.error("Update failed:", err);
+      // console.error("Update failed:", err);
     }
   };
 
@@ -49,7 +49,7 @@ const Review = ({ single, handleReviewUpdate, handleReviewDelete }) => {
         Swal.fire("Deleted!", "Your review has been deleted.", "success");
       }
     } catch (err) {
-      console.error("Delete failed:", err);
+      // console.error("Delete failed:", err);
       Swal.fire("Error!", "Failed to delete review.", "error");
     }
   }

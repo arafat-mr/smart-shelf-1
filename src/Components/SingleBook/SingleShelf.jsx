@@ -2,7 +2,10 @@ import React from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router';
 
+
 const SingleShelf = ({single}) => {
+   
+
     return (
           <div className="card bg-base-200  lg:w-96 shadow-2xl ">
      <figure>

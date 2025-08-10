@@ -19,7 +19,7 @@ const PopularBooks = () => {
         setData(sortedBooks.slice(0, 9)); 
       })
       .catch((err) => {
-        console.error("Error fetching books:", err);
+        // console.error("Error fetching books:", err);
       })
       .finally(() => {
         setLocalLoading(false);

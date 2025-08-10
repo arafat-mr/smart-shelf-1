@@ -78,7 +78,7 @@ useEffect(() => {
         }));
       }
     } catch (error) {
-      console.error("Upvote failed:", error);
+      // console.error("Upvote failed:", error);
       Swal.fire("Error", "Failed to upvote", "error");
     } finally {
       setTimeout(() => setClicked(false), 500);
@@ -101,7 +101,7 @@ useEffect(() => {
         Swal.fire("Success", "Reading status updated!", "success");
       }
     } catch (error) {
-      console.error("Failed to update status:", error);
+      // console.error("Failed to update status:", error);
       Swal.fire("Error", "Could not update reading status.", "error");
     }
   };
@@ -145,7 +145,7 @@ useEffect(() => {
         setUserReview((prev) => [...prev, review]);
       }
     } catch (err) {
-      console.error("Error submitting review:", err);
+      // console.error("Error submitting review:", err);
       Swal.fire("Error!", "Failed to submit review.", "error");
     }
   };

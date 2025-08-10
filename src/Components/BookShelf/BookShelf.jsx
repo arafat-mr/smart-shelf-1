@@ -14,12 +14,13 @@ const BookShelf = () => {
     const [filteredData, setFilteredData] = useState([]);
     const [searchWord, setsearchWord] = useState('');
     const [statusFilter, setStatusFilter] = useState('All');
-
+ const [loadingBooks, setLoadingBooks] = useState(true);
     useEffect(() => {
         if (authLoading ) return;
 
         const fetchBooks = async () => {
             try {
+                setLoadingBooks(true);
                 const res = await fetch("https://virtual-bookshelf-server-ruddy.vercel.app/books");
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
@@ -28,16 +29,17 @@ const BookShelf = () => {
                 setData(books);
                 setFilteredData(books);
             } catch (error) {
-                console.error("Failed to fetch books:", error);
+                // console.error("Failed to fetch books:", error);
             } finally {
                 setLoading(false);
+                setLoadingBooks(false);
             }
         };
 
         fetchBooks();
     }, [setLoading, user, authLoading]);
 
-    // 🔍 Search & Filter Logic
+    //  Search & Filter Logic
     useEffect(() => {
         let updated = [...data];
 
@@ -58,8 +60,14 @@ const BookShelf = () => {
         setFilteredData(updated);
     }, [searchWord, statusFilter, data]);
 
-    if (authLoading) return <LoadingSpinner />;
-// bg-[url('https://i.ibb.co/qLydTBzd/peter-rovder-X-5k-MOSx-Lzw-unsplash.jpg')]
+    
+if (authLoading || loadingBooks) {
+        return (
+            <div className="flex justify-center items-center min-h-screen">
+                <LoadingSpinner />
+            </div>
+        );
+    }
     return (
         <div className=" p-2 lg:p-5 min-h-screen">
             <h3 className="text-center text-xl md:text-2xl lg:text-4xl bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent font-semibold mt-20 lg:mt-15">
@@ -92,12 +100,15 @@ const BookShelf = () => {
                     </select>
                 </div>
             </div>
-
+                 
+                 
             <p className="bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-700 bg-clip-text text-transparent text-center mb-4">
                 Showing {filteredData.length} {filteredData.length === 1 ? 'book' : 'books'}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-11/12 gap-5 mt-5 mx-auto pb-10">
+
+                    
                 {filteredData.length > 0 ? (
                     filteredData.map(single => <SingleShelf key={single._id} single={single} />)
                 ) : (
